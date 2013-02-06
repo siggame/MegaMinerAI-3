@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/mstacmai3/!svn/ver/157/branches/benClient
+END
+AI.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/mstacmai3/!svn/ver/147/branches/benClient/AI.h
+END
+game.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/mstacmai3/!svn/ver/153/branches/benClient/game.h
+END
+network.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mstacmai3/!svn/ver/146/branches/benClient/network.h
+END
+wrappers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/mstacmai3/!svn/ver/153/branches/benClient/wrappers.cpp
+END
+BaseAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/mstacmai3/!svn/ver/146/branches/benClient/BaseAI.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/146/branches/benClient/main.cpp
+END
+structures.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/mstacmai3/!svn/ver/146/branches/benClient/structures.h
+END
+wrappers.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/mstacmai3/!svn/ver/153/branches/benClient/wrappers.h
+END
+AI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/mstacmai3/!svn/ver/147/branches/benClient/AI.cpp
+END
+BaseAI.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/146/branches/benClient/BaseAI.h
+END
+game.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/153/branches/benClient/game.cpp
+END
+network.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/mstacmai3/!svn/ver/146/branches/benClient/network.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/147/branches/benClient/Makefile
+END

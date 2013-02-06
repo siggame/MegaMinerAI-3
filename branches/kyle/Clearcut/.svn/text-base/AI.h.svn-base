@@ -1,0 +1,123 @@
+#ifndef AI_H
+#define AI_H
+#include <vector>
+#include "time.h"
+using namespace std;
+#include "BaseAI.h"
+/*Files you should probably look at
+  BaseAi for data structures
+  wrappers.h for functions
+*/
+struct location
+{
+  location(){};
+  location(int X,int Y){x=X;y=Y;};
+  void operator=(location rhs){x=rhs.x;y=rhs.y;};
+  location operator +(location& rhs){return location(x+rhs.x,y+rhs.y);};
+  location operator -(location& rhs){return location(x-rhs.x,y-rhs.y);};
+  void operator+=(location& rhs){x=x+rhs.x,y=y+rhs.y;};
+  int x,y;
+};
+
+template <class T>
+  //Pre:  T has the function x() and y() defined
+  //Post: Returns the index of the T at x,y or if nothing is there, -1
+int atLocation(vector<T> vect, int x,int y)
+{
+  for(unsigned int i=0;i<vect.size();i++)
+  {
+    if(vect[i].x() ==x && vect[i].y() == y)
+      return int(i);
+  }
+  return -1;
+}
+
+template <class T>
+//Pre:  T has the function .hp() defined
+//Post: Returns the index of the lowest health T in vect, if nothing is there, -1
+int lowestHealth(vector<T> vect,vector<int> indexs)
+{
+  if(indexs.size()==0) return -1;
+  int index=0;
+  for(unsigned int i=1;i<indexs.size();i++)
+  {
+    if(vect[indexs[i]].hp() < vect[indexs[index]].hp())
+    {
+      index =i;
+    }
+  }
+  return indexs[index];
+}
+
+int distance(int startX, int startY, int targetX, int targetY)
+{
+  int dis;
+  int dx = targetX - startX;
+  int dy = targetY - startY;
+  int absdy = (dy<0?-dy:dy);
+  int absdx = (dx<0?-dx:dx);
+  if (dx * dy > 0)
+    dis = absdx+absdy;
+  else
+    dis = (absdx>absdy?absdx:absdy);
+  return dis;
+}
+
+
+template <class T>
+int atLocation(vector<T> vect, location loc)
+{
+  return atLocation(vect,loc.x,loc.y);
+}
+
+//Pre:  T has the function x() and y() defined
+//Post: Returns the index of the T nearest x,y or if nothing is there, -1
+template <class T>
+int nearest(vector<T> vect, int x, int y)
+{
+  int index=-1,dis=9999,temp;
+  for(unsigned int i=0;dis>0 && i<vect.size();i++)
+  {
+    if((temp=distance(x,y,vect[i].x(),vect[i].y() )) <dis)
+    {
+      dis=temp;
+      index=i;
+    }
+  }
+  return index;
+}
+
+template <class T>
+int nearest(vector<T> vect, location loc)
+{
+  return nearest(vect,loc.x,loc.y);
+}
+
+
+#include <iostream>
+
+class AI: public BaseAI
+{
+public:
+  AI();
+  void init(){};
+  
+  
+  
+  vector<location> validMoves(int x, int y);
+  vector<location> validMoves(location myLoc);
+  
+  vector<location> withinRange(int x, int y,int range);
+  
+  void displayHuman(Human human);
+  void displayZombie(Zombie zombie);
+  bool inBounds(int x, int y);
+  vector<int> getAdjacentWalls(location myLoc);
+  
+  virtual const char* username();
+  virtual const char* password();
+  virtual bool runHuman();
+  virtual bool runZombie();
+};
+
+#endif

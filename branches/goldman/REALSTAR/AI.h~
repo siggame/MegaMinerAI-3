@@ -1,0 +1,174 @@
+#ifndef AI_H
+#define AI_H
+#include <vector>
+#include <iostream>
+#include <queue>
+using namespace std;
+
+#include "BaseAI.h"
+
+class fHuman
+{
+ public:
+  int X,Y,MVE,AM,HP,MHP,WID;
+  float IDL,DLY;
+  fHuman(){};
+  fHuman(Human& human): X(human.x()),Y(human.y()),MVE(human.moves()),IDL(human.idleTime()),AM(human.ammo()),HP(human.hp()),MHP(human.maxHp()),WID(human.weaponID())
+  {
+    switch (human.weaponID())
+    {
+      case 0://medkit
+        DLY = 2;
+        break;
+      case 1://shot
+        DLY = 1;
+        break;
+      case 2://grenade
+        DLY = 3;
+        break;
+      case 4://Chain
+        DLY = 1;
+        break;
+      case 5: //PISTOL
+        DLY = .5;
+        break;
+      case 6://FLAME
+        DLY = .33;
+        break;
+    }
+  };
+  ///X coordinate
+  int x() {return X;};
+  ///Y coordinate
+  int y() {return Y;};
+  ///Current HP
+  int hp() {return HP;};
+  ///Maximum HP
+  int maxHp() {return MHP;};
+  ///Moves left this turn
+  int moves() {return MVE;};
+  ///Weapon ID
+  int weaponID() {return WID;};
+  ///Amount of time saved up for using weapons.
+  float idleTime() {return IDL;};
+  ///Ammunition on hand
+  int ammo() {return AM;};
+
+  //Actions
+  ///Move to the adjacent hex at x y
+  void move(int x, int y){X=x;Y=y;MVE--;};
+  ///Attack the Zombie
+  void attack(const Zombie& target)
+  {
+    IDL-=DLY;
+    IDL = (IDL>1?1:IDL);
+  };
+  ///Attack hex at X,Y
+  void attack(int x, int y)
+  {
+    IDL-=DLY;
+    IDL = (IDL>1?1:IDL);
+  };
+  ///Build or reenforce a wall in an adjacent square
+  void build(int x, int y){MVE--;};
+};
+
+
+struct location
+{
+  int x,y,f;
+  location() : x(0),y(0),f(0) {};
+  location(int X, int Y):x(X),y(Y),f(0) {};
+  location(int X, int Y, int F):x(X),y(Y),f(F) {};  
+};
+
+struct mpair
+{
+  int type,value;
+  mpair() : type(0), value(0) {} ;
+  mpair(int t,int v) : type(t), value(v){};
+};
+
+struct lpair
+{
+  int type,value,score;
+  location loc;
+  lpair() : type(0), value(0) , loc(0,0),score(0) {} ;
+  lpair(int t,int v) : type(t), value(v), loc(0,0),score(0){};
+  lpair(int t,location v) : type(t), value(0), loc(v),score(0){};  
+  
+  void display()
+  {
+    cout<<"Move Type "<<type<<endl
+        <<"Move Valu "<<value<<endl
+        <<"Move Locn ("<<loc.x<<","<<loc.y<<")"<<endl;
+  }
+
+};
+
+struct hmpair
+{
+  vector<lpair> pastMoves;
+  fHuman guy;
+  int damageDone,healsDone,wallsBuilt,danger,score;
+  hmpair() : damageDone(0),healsDone(0),danger(0),wallsBuilt(0) {};
+  //sorts in reverse of normal
+  bool friend operator<(const hmpair&rhs,const hmpair&lfs)
+  {
+    return lfs.score > rhs.score;
+  }
+};
+
+static int distance(int startX, int startY, int targetX, int targetY)
+{
+  int dis;
+  int dx = targetX - startX;
+  int dy = targetY - startY;
+  int absdy = (dy<0?-dy:dy);
+  int absdx = (dx<0?-dx:dx);
+  if (dx * dy > 0)
+    dis = absdx+absdy;
+  else
+    dis = (absdx>absdy?absdx:absdy);
+  return dis;
+}
+
+
+static location offset[] = {
+                     location( 1, 0),//0
+                     location( 0, 1),//1
+                     location(-1, 1),//2
+                     location(-1, 0),//3
+                     location( 0,-1),//4
+                     location( 1,-1) //5
+                     };
+
+//move to location
+//attack location
+//attack wall
+//attack zombie
+//grab crate
+//
+
+
+enum {EMPTY,ZOMBIE,HUMAN,WALL,CRATE,ZATTACK,ZSIGHT};
+enum {MOVE,HEAL,ATKW,ATKZ,GBC,TW,TA,BLD};
+///The class implementing gameplay logic.
+class AI: public BaseAI
+{
+public:
+  virtual const char* username();
+  virtual const char* password();
+  virtual void init();
+  virtual bool runHuman();
+  virtual bool runZombie();
+  vector< vector < mpair> > getBlocking();
+  vector< vector < mpair> > getDanger();
+  vector<lpair> moveHuman(vector< vector<mpair> > & blocking, vector<vector<mpair> > & danger, fHuman& realstar);
+  vector<lpair> generateSuccessor(vector< vector <mpair> > & blocking, fHuman realstar);
+  hmpair makeMove(hmpair current,vector<vector<mpair> > & danger,lpair& move);
+  void makeMoves(vector<lpair> &actions,Human&guy);
+  int lowestHP(location loc);
+};
+
+#endif
