@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/384/server/networking
+END
+noCompress.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/mstacmai3/!svn/ver/18/server/networking/noCompress.py
+END
+Telnet.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/18/server/networking/Telnet.py
+END
+testClient.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/mstacmai3/!svn/ver/52/server/networking/testClient.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mstacmai3/!svn/ver/18/server/networking/__init__.py
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/mstacmai3/!svn/ver/52/server/networking/test.py
+END
+cliTelnet.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/mstacmai3/!svn/ver/52/server/networking/cliTelnet.py
+END
+Filter.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/154/server/networking/Filter.py
+END
+Server.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/384/server/networking/Server.py
+END

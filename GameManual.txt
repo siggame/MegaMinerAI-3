@@ -1,0 +1,237 @@
+General
+  Ending Conditions
+    The game ends when there are no more humans alive or when the game
+    has reached its turn limit.
+    The turn limit is 1000 but is subject to change.
+    For the tournament, you win a match against an opponent if your
+    humans live longer.
+    To break ties, we will use your remaining time.
+    The humans should never live to turn 1000.
+
+
+  Time Limit
+    You will be given a set amount of time plus some time per turn.
+    These values are currently 30 seconds + 1 second per 
+    turn but are subject to change.
+    If you run out of time as the humans, all of your humans die.
+    If you run out of time as the zombies, the turn number is set to the
+    max turn limit.
+
+  Game updates
+    Even if not specifically mentioned, all constants are subject to change.
+    After midnight, we will try to only make changes to the game if they
+    are critical or by popular demand.
+
+
+Map
+  Hexagons
+    The map consists of hexagons arranged in a diamond formation.
+    The map shown below would have a "radius" of 1 because it goes
+    from (-1,-1) to (1,1).  The positive X-axis is down and to the right.
+    The positive Y-axis is up and to the right.
+           __
+        __/  \__
+     __/  \D_/  \__           
+    /  \__/  \__/  \
+    \E_/  \A_/  \C_/
+       \__/  \__/
+          \B_/
+    A = ( 0, 0)
+    B = ( 1,-1)
+    C = ( 1, 1)
+    D = (-1, 1)
+    E = (-1,-1)
+
+  Square grid equivilent
+    If you don't like hexagons, you can imagine that the game takes places
+    on a square grid.  The positive X-axis to the right.  The positive Y-axis is
+    straight up.  A unit can move left, right, up, down, down-right, or up-left.
+
+  Distance
+    By our definition of the map, this handy little formula will calculate 
+    the distance between two points.
+
+      dx = targetX - startX
+      dy = targetY - startY
+      if (dx * dy > 0):
+        dis = abs(dx) + abs(dy)
+      else:
+        dis = max(abs(dx), abs(dy))
+
+  Adjacency
+    Two hexes are adjacent if the distance between them is 1 as defined by
+    the above formula.  This should be easily visible from the ASCII image.
+
+
+Humans
+  General
+    Humans get 3 moves per turn which they can use to move or build.
+    Humans get 1 unit of time per turn which they can use to
+    fire weapons (see Weapon Delay).
+
+  Spawning
+    Spawn your humans anywhere on the map as long as there is not
+    a wall or another human there.
+    You can only spawn humans the first turn.
+    They can start with any weapon except zombie arms.  Use the weapon's
+    canCall and canSpawnWith functions before you try to call for a crate
+    or spawn with them.
+
+  Sight
+    Humans can see anything within a radius of 8 (subject to change),
+    which is practically the entire map.
+
+  Move
+    Humans can move to any hex that meets the following criteria:
+      It is adjacent.
+      It does not contain another human.
+      It does not contain a wall.
+      It does not contain any zombies.
+    This action requires a move.
+
+  Attack
+    Each weapon inflicts 3 Kinds of damage: Direct, Vertical splash,
+    and Horizontal Splash.
+    Direct damage is applied to the targeted unit only.
+    ATTACKING GROUND FORFEITS DIRECT DAMAGE.
+    Vertical splash damage is applied to every object in the targeted hex.
+    Horizontal splash damage is applied to every object within the
+    horizontal splash radius.
+    This action requires a move.
+
+  Weapon Delay
+    Weapon delay can be confusing, so here is the function that determines
+    wether or not you can fire your weapon.
+    
+    success = (weaponDelay < human.idleTime)
+    if (success):
+      human.idleTime -= weaponDelay
+      if (human.idleTime > 1):
+        human.idleTime = 1
+    
+    Notice the < operator is NOT the <= operator.
+    This function attempts to model real time.
+    Imagine your human is holding a weapon with a delay of 3 has been waiting
+    around for a long time. His idleTime is infinity.  You see a zombie and
+    fire at the beginning of your turn.  His idleTime is now 1 because he still
+    has the rest of this turn to perform actions.  Say he drops his weapon and
+    picks up a new weapon with a delay of 0.5.  He can fire it once.  Now he
+    has an idle time of 0.5 because he spent 0.5 of this turn firing this
+    new weapon.  He can not fire it again this turn, but is ready to fire it at
+    the very beginning of his next turn.  If you stick with this weapon forever,
+    turn, you will be able to fire it twice
+
+  Sharing!
+    Humans have functions for dropping their ammo and weapons, creating crates
+    on the map.
+    To make ammo sharing easier, humans have a function for giving their ammo
+    directly to another human.
+    Humans can pick up weapons and ammo.
+    
+    
+  Pick up an ammo crate
+    The amount of ammo gained is equal to the crate's HP.
+
+  Build
+    Humans can create a new wall with a small amount of HP or add this HP
+    to an existing wall by targeting the desired hex.
+    New walls can only be placed where there are no humans or zombies.
+    This action requires a move.
+
+  Call for Drops
+    The local government is not willing to expose its troops to the infection,
+    but it is willing to occassionally drop supplies.
+    You can call for a drop containing a specific weapon or an ammo box.
+    A pending airstrike is visible only to the human team.
+    After a set number of turns, the crate falls from the sky, dealing a lot 
+    of damage to anything it lands on (currently 200 vertical splash damage).
+
+
+Zombies
+  General
+    Zombies can overlap each other.
+    Zombies have a low sight range.
+    Zombies can smell humans.
+    Zombies are facing a specific direction.  Most actions must be applied
+    to objects that are directly in front of them.
+    The zombie team can not see crates or airstrikes at all.
+    Zombie starting HP increases linearly over time.
+    Zombies will become much more numerous over time.
+    Zombies get 1 move per turn.
+  Sight
+    Zombies have poor vision.  They can see anything within a radius of
+    2 (subject to change).
+
+  Spawning
+    You can only spawn as many zombies this turn as are ready.
+      Your client has a function to determine how many are ready to spawn.
+      If you don't use them, you lose them.  You can't save them up.
+      The frequency of zombies ready per turn increases linearly over time.
+    You can only spawn more zombies if you have not reached the zombie cap.
+      Your client has a function to determine the current zombie cap.
+      The zombie cap increases linearly over time.
+    Zombies are spawned by choosing a spawn zone.
+      A spawn zone is placed along each of the 4 sides of the map.
+      The zombie is placed in a psuedo random hex inside this area.
+      For an explanation of the pattern used to choose the next hex, ask
+      Stephen Mues.
+
+
+  Eat
+    Zombies can eat other zombies to recover health.
+    This action requires a move.
+    The targeted zombie must be in the same hex or immediately in front
+    of the cannabal.
+
+    THE CONSTANTS GIVEN HERE ARE SUBJECT TO CHANGE.
+    The amount of health gained is twice the HP of the eaten zombie.
+    Zombies can be healed to 1.5 times their starting health.
+  Move
+    Zombies can move to any hex that meets the following criteria:
+      It is adjacent.
+      It is in front of the zombie.
+      It does not contain a human.
+      It does not contain a wall.
+    This action requires a move.
+  Facing
+    0 is the positive X-axis
+    1 is the positive Y-axis
+    5 is the max value of facing.
+           __
+        __/  \__
+     __/  \2_/  \__           
+    /  \3_/  \1_/  \
+    \__/  \Z_/  \__/
+       \4_/  \0_/
+          \5_/
+
+  Turning
+    Zombies can call their turning function with 1 for CW or -1 for CCW.
+    This value is added to their current facing, rolling over from 5
+    to 0 and vice versa.
+    This action requires a move.
+
+  Scent
+    Each zombie is assigned a scent value that vaguely describes
+    the location of the humans.
+    
+    For each zombie:
+      scent = 0
+      For each human:
+        if (the human is in front of the zombie):
+          scent += 1 / (distance between the zombie and human)
+
+    See definition of "in front" given below
+
+  In front
+    If the zombie, labeled Z, is facing in direction 2 (up), the hexes labeled
+    O are considered in front of it.
+              __
+           __/  \__
+        __/  \O_/  \__
+     __/  \O_/  \O_/  \__        
+    /  \O_/  \O_/  \O_/  \
+    \__/  \O_/  \O_/  \__/
+       \__/  \O_/  \__/
+          \__/  \__/
+             \Z_/

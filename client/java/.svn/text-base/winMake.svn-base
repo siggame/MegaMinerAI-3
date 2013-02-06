@@ -1,0 +1,3 @@
+javac -cp jna.jar;. Main.java
+set path=%path%;%CD%
+java -cp jna.jar;. Main

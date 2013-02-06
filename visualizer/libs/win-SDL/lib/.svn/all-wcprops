@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/107/visualizer/libs/win-SDL/lib
+END
+SDL.lib
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mstacmai3/!svn/ver/107/visualizer/libs/win-SDL/lib/SDL.lib
+END
+SDL.dll
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mstacmai3/!svn/ver/107/visualizer/libs/win-SDL/lib/SDL.dll
+END
+SDLmain.lib
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/mstacmai3/!svn/ver/107/visualizer/libs/win-SDL/lib/SDLmain.lib
+END

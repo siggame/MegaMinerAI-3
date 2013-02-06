@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/mstacmai3/!svn/ver/172/client/sexp
+END
+sexp_ops.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mstacmai3/!svn/ver/83/client/sexp/sexp_ops.c
+END
+sexp_vis.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mstacmai3/!svn/ver/76/client/sexp/sexp_vis.c
+END
+sexp_vis.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mstacmai3/!svn/ver/76/client/sexp/sexp_vis.h
+END
+sexp_ops.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mstacmai3/!svn/ver/76/client/sexp/sexp_ops.h
+END
+event_temp.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/mstacmai3/!svn/ver/76/client/sexp/event_temp.c
+END
+io.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/76/client/sexp/io.c
+END
+sexp_memory.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/mstacmai3/!svn/ver/76/client/sexp/sexp_memory.c
+END
+cstring.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mstacmai3/!svn/ver/76/client/sexp/cstring.c
+END
+sexp_memory.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/mstacmai3/!svn/ver/76/client/sexp/sexp_memory.h
+END
+cstring.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mstacmai3/!svn/ver/76/client/sexp/cstring.h
+END
+sexp.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/83/client/sexp/sexp.c
+END
+sexp_errors.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/mstacmai3/!svn/ver/76/client/sexp/sexp_errors.h
+END
+faststack.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/mstacmai3/!svn/ver/76/client/sexp/faststack.c
+END
+sexp.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/76/client/sexp/sexp.h
+END
+faststack.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/mstacmai3/!svn/ver/76/client/sexp/faststack.h
+END
+parser.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/76/client/sexp/parser.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mstacmai3/!svn/ver/172/client/sexp/Makefile
+END

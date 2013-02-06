@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/mstacmai3/!svn/ver/351/visualizer/Message
+END
+Buffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/mstacmai3/!svn/ver/351/visualizer/Message/Buffer.h
+END
+File.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/87/visualizer/Message/File.cpp
+END
+SExpr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mstacmai3/!svn/ver/351/visualizer/Message/SExpr.cpp
+END
+SExprManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/mstacmai3/!svn/ver/87/visualizer/Message/SExprManager.h
+END
+SExprSource.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/mstacmai3/!svn/ver/169/visualizer/Message/SExprSource.cpp
+END
+File.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/mstacmai3/!svn/ver/87/visualizer/Message/File.h
+END
+SExpr.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/351/visualizer/Message/SExpr.h
+END
+SExprSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/mstacmai3/!svn/ver/87/visualizer/Message/SExprSource.h
+END
+Socket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/mstacmai3/!svn/ver/171/visualizer/Message/Socket.cpp
+END
+Buffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/mstacmai3/!svn/ver/351/visualizer/Message/Buffer.cpp
+END
+SExprManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/mstacmai3/!svn/ver/351/visualizer/Message/SExprManager.cpp
+END
+Socket.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/87/visualizer/Message/Socket.h
+END

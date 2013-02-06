@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/mstacmai3/!svn/ver/378/server
+END
+Game.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/mstacmai3/!svn/ver/384/server/Game.py
+END
+runJava
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/mstacmai3/!svn/ver/285/server/runJava
+END
+runPython
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/mstacmai3/!svn/ver/285/server/runPython
+END
+main.py
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/mstacmai3/!svn/ver/339/server/main.py
+END
+config.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/93/server/config.py
+END
+db.py
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/mstacmai3/!svn/ver/342/server/db.py
+END
+arena.py
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/377/server/arena.py
+END
+fileserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mstacmai3/!svn/ver/286/server/fileserver.py
+END
+gpl-3.0.txt
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/18/server/gpl-3.0.txt
+END
+keepclean.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/357/server/keepclean.py
+END

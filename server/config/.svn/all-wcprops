@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/mstacmai3/!svn/ver/384/server/config
+END
+defaults.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/341/server/config/defaults.cfg
+END
+login.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/mstacmai3/!svn/ver/384/server/config/login.cfg
+END
+humans.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/mstacmai3/!svn/ver/78/server/config/humans.cfg
+END
+weapons.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/mstacmai3/!svn/ver/348/server/config/weapons.cfg
+END

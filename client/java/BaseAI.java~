@@ -1,0 +1,126 @@
+public abstract class BaseAI
+{
+    static Wall[] walls;
+    static Crate[] crates;
+    static Weapon[] weapons;
+    static Human[] humans;
+    static Zombie[] zombies;
+    static Airstrike[] airstrikes;
+    static Spawnzone[] spawnzones;
+    
+    static int iteration;
+    
+    public abstract String username();
+    public abstract String password();
+    public abstract boolean runHuman();
+    public abstract boolean runZombie();
+    
+    public boolean startTurn()
+    {
+        int count = 0;
+        count = Client.INSTANCE.getWallCount();
+        walls = new Wall[count];
+        for(int i = 0; i < count; i++)
+        {
+            walls[i] = new Wall(Client.INSTANCE.getWalls(i));
+        }
+        count = Client.INSTANCE.getCrateCount();
+        crates = new Crate[count];
+        for(int i = 0; i < count; i++)
+        {
+            crates[i] = new Crate(Client.INSTANCE.getCrates(i));
+        }
+        count = Client.INSTANCE.getWeaponCount();
+        weapons = new Weapon[count];
+        for(int i = 0; i < count; i++)
+        {
+            weapons[i] = new Weapon(Client.INSTANCE.getWeapons(i));
+        }
+        count = Client.INSTANCE.getHumanCount();
+        humans = new Human[count];
+        for(int i = 0; i < count; i++)
+        {
+            humans[i] = new Human(Client.INSTANCE.getHumans(i));
+        }
+        count = Client.INSTANCE.getZombieCount();
+        zombies = new Zombie[count];
+        for(int i = 0; i < count; i++)
+        {
+            zombies[i] = new Zombie(Client.INSTANCE.getZombies(i));
+        }
+        count = Client.INSTANCE.getAirstrikeCount();
+        airstrikes = new Airstrike[count];
+        for(int i = 0; i < count; i++)
+        {
+            airstrikes[i] = new Airstrike(Client.INSTANCE.getAirstrikes(i));
+        }
+        count = Client.INSTANCE.getSpawnzoneCount();
+        spawnzones = new Spawnzone[count];
+        for(int i = 0; i < count; i++)
+        {
+            spawnzones[i] = new Spawnzone(Client.INSTANCE.getSpawnzones(i));
+        }
+        
+        iteration++;
+        
+        if(Client.INSTANCE.isHuman())
+        {
+            return runHuman();
+        }
+        else
+        {
+            return runZombie();
+        }
+    }
+    
+    public int turnNum()
+    {
+        return Client.INSTANCE.getTurnNumber();
+    }
+
+    public int mapSize()
+    {
+      return Client.INSTANCE.getMapSize();
+    }
+
+    public String humanTeamName()
+    {
+      return Client.INSTANCE.getHumanTeamName();
+    }
+
+    public String  zombieTeamName()
+    {
+      return Client.INSTANCE.getZombieTeamName();
+    }
+
+    public float humanTime()
+    {
+      return Client.INSTANCE.getHumanTime();
+    }
+
+    public  float zombieTime()
+    {
+      return Client.INSTANCE.getZombieTime();
+    }
+    
+    public float airstrikesReady()
+    {
+      return Client.INSTANCE.getAirstrikesReady();
+    }
+    
+    int zombiesReady()
+    {
+      return Client.INSTANCE.getZombiesReady();
+    }
+    
+    int humansReady()
+    {
+      return Client.INSTANCE.getHumansReady();
+    }
+    
+    
+    public int zombieCap()
+    {
+      return Client.INSTANCE.getZombieCap();
+    }
+}

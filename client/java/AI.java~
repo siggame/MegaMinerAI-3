@@ -1,0 +1,28 @@
+class AI extends BaseAI
+{
+    public String username()
+    {
+        return "Shell AI";
+    }
+    public String password()
+    {
+        return "password";
+    }
+    public boolean runHuman()
+    {
+        if(turnNum() == 1)
+        {
+          Human.spawn(weapons[0],0,0);
+        }
+        return true;
+    }
+    
+    public boolean runZombie()
+    {
+        if(Client.INSTANCE.getZombiesReady() > 0)
+        {
+          Zombie.spawn(spawnZones[0],0);
+        }
+        return true;
+    }
+}

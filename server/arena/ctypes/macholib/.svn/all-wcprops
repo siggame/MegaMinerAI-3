@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/mstacmai3/!svn/ver/285/server/arena/ctypes/macholib
+END
+dyld.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/mstacmai3/!svn/ver/285/server/arena/ctypes/macholib/dyld.py
+END
+framework.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/mstacmai3/!svn/ver/285/server/arena/ctypes/macholib/framework.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/mstacmai3/!svn/ver/285/server/arena/ctypes/macholib/__init__.py
+END
+dylib.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/mstacmai3/!svn/ver/285/server/arena/ctypes/macholib/dylib.py
+END

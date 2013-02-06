@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/mstacmai3/!svn/ver/385/server/lexpr
+END
+ServerStatements.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/mstacmai3/!svn/ver/134/server/lexpr/ServerStatements.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/mstacmai3/!svn/ver/46/server/lexpr/__init__.py
+END
+abstfilter.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/mstacmai3/!svn/ver/46/server/lexpr/abstfilter.py
+END
+sexpr.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/mstacmai3/!svn/ver/115/server/lexpr/sexpr.py
+END
+MasterStatements.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/mstacmai3/!svn/ver/344/server/lexpr/MasterStatements.py
+END
+StatementUtils.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/mstacmai3/!svn/ver/156/server/lexpr/StatementUtils.py
+END
+Statements.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/mstacmai3/!svn/ver/385/server/lexpr/Statements.py
+END

@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/mstacmai3/!svn/ver/381/client
+END
+AI.h
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/mstacmai3/!svn/ver/335/client/AI.h
+END
+network.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/mstacmai3/!svn/ver/229/client/network.h
+END
+zombieAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/328/client/zombieAI.cpp
+END
+commonAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/328/client/commonAI.cpp
+END
+wrappers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/314/client/wrappers.cpp
+END
+wrappers.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/349/client/wrappers.h
+END
+game.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/381/client/game.cpp
+END
+getters.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/mstacmai3/!svn/ver/309/client/getters.cpp
+END
+util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/293/client/util.cpp
+END
+game.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/mstacmai3/!svn/ver/314/client/game.h
+END
+getters.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/mstacmai3/!svn/ver/309/client/getters.h
+END
+humanAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/mstacmai3/!svn/ver/283/client/humanAI.cpp
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/mstacmai3/!svn/ver/293/client/util.h
+END
+BaseAI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/mstacmai3/!svn/ver/313/client/BaseAI.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/314/client/main.cpp
+END
+fileclient.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/mstacmai3/!svn/ver/263/client/fileclient.py
+END
+structures.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/mstacmai3/!svn/ver/276/client/structures.h
+END
+AI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/mstacmai3/!svn/ver/232/client/AI.cpp
+END
+BaseAI.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/331/client/BaseAI.h
+END
+network.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/mstacmai3/!svn/ver/229/client/network.cpp
+END
+submit.sh
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/mstacmai3/!svn/ver/357/client/submit.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/mstacmai3/!svn/ver/303/client/Makefile
+END

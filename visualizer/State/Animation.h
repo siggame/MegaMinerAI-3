@@ -1,0 +1,39 @@
+//Ben Murrell
+#pragma once
+
+#include "SExpr.h"
+
+#include <deque>
+using std::deque;
+
+
+class Animation
+{
+   public:
+      enum Type{None, Add, Remove, Move, Turn, Attack, Hurt, Eat, Grab, Throw, Give, Build};
+      
+   public:
+      Animation();
+      ~Animation();
+      Animation& operator=(const Animation& right);
+
+      void fromSExpr(SExpr from);
+
+      Type type();
+      int x();
+      int y();
+      deque<int>& ids();
+
+      void setType(Type type);
+      void setX(int x);
+      void setY(int y);
+
+   private:
+      Type m_type;
+      
+      deque<int> m_ids;
+      int m_x;
+      int m_y;
+};
+
+
